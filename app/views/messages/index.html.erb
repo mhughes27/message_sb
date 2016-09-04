@@ -1,10 +1,31 @@
+<h1>New Message</h1>
+
+<%= form_for :message do |f| %>
+  <p>
+    <%= f.label :visitor %><br>
+    <%= f.text_field :visitor %>
+  </p>
+ 
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+ 
+  <p>
+    <%= f.submit "Add a Messsage"%>
+  </p>
+<% end %>
+
+
+
 <h1>Listing Messages</h1>
  
   <div>
   <% @messages.each do |message| %>
     
     <p><%= message.visitor %> signed the guestbook <%= time_ago_in_words(message.created_at) %> ago.</p>
-      <p><%= message.body %></p><br>
+    <p>"<%= message.body %>"</p>
+    <hr />
     
   <% end %>
   </div>

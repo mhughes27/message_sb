@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
 
 	def index
     	@messages = Message.all
+  		@message = Message.new
   	end
 
 	def show
@@ -15,7 +16,7 @@ class MessagesController < ApplicationController
 		@message = Message.new(message_params)
 
 		@message.save
-		redirect_to @message
+		redirect_to messages_path
 	end
 
 	private
