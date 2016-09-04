@@ -1,14 +1,3 @@
-<h1>Listing Messages</h1>
- 
-  <div>
-  <% @messages.each do |message| %>
-    
-    <p><%= message.visitor %> signed the guestbook <%= time_ago_in_words(message.created_at) %> ago.</p>
-      <p><%= message.body %></p><br>
-    
-  <% end %>
-  </div>
-
   <h1>New Message</h1>
 
 <%= form_for :message do |f| %>
@@ -26,3 +15,14 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+<h1>Listing Messages</h1>
+ 
+  <div>
+  <% @messages.each do |message| %>
+    
+    <p><%= message.visitor %> signed the guestbook <%= time_ago_in_words(message.created_at) %> ago.</p>
+      <p><%= message.body %></p><br>
+    
+  <% end %>
+  </div>
